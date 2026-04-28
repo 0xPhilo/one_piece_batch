@@ -15,7 +15,8 @@ acefile_links = []
 for a in soup.find_all("a", href=True):
     href = a["href"]
     if "acefile.co" in href and "opk" in href:
-        acefile_links.append(href)
+        if not "720p" in href and not "480p" in href:
+            acefile_links.append(href)
 
 # print results
 for link in acefile_links:
